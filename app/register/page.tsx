@@ -39,21 +39,21 @@ export default function RegisterPage() {
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="p-2 rounded text-black"
+          className="p-2 rounded text-black bg-orange-400"
         />
         <input
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="p-2 rounded text-black"
+          className="p-2 rounded text-black bg-orange-400"
         />
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="p-2 rounded text-black"
+          className="p-2 rounded text-black bg-orange-400"
         />
 
         <button

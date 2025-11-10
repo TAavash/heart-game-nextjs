@@ -30,7 +30,7 @@ export default function GamePage() {
         setQuestionImg(data.data.question);
         setSolution(Number(data.data.solution));
         setUserAnswer("");
-        setTimeLeft(20);
+        setTimeLeft(10);
         setMessage(null);
       } else {
         setError("Failed to load question.");
@@ -133,13 +133,13 @@ export default function GamePage() {
 
       <p className="mb-2 text-lg">⏱️ Time Left: {timeLeft}s</p>
 
-      <form onSubmit={handleSubmit} className="flex flex-col items-center gap-3 mb-4">
+      <form onSubmit={handleSubmit} className="flex items-center gap-3 mb-4">
         <input
           type="number"
           placeholder="How many hearts?"
           value={userAnswer}
           onChange={(e) => setUserAnswer(e.target.value)}
-          className="text-black p-2 rounded w-48 text-center"
+          className="text-black bg-orange-400 p-2 rounded w-48 text-center"
           disabled={timeLeft <= 0}
         />
         <button
@@ -152,21 +152,6 @@ export default function GamePage() {
       </form>
 
       {message && <p className="mb-4">{message}</p>}
-
-      <div className="flex gap-4">
-        <button
-          onClick={() => void fetchQuestion()}
-          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded"
-        >
-          Next Question
-        </button>
-        <button
-          onClick={() => signOut()}
-          className="px-4 py-2 bg-gray-700 hover:bg-gray-800 rounded"
-        >
-          Logout
-        </button>
-      </div>
     </main>
   );
 }
