@@ -1,10 +1,10 @@
 
 import { NextResponse } from "next/server";
 
-/**
- * Fetches a question from the Heart Game API.
- * Demonstrates interoperability: external API → our backend → frontend.
- */
+
+//  Fetches a question from the Heart Game API.
+//  Demonstrates interoperability: external API → our backend → frontend.
+
 export async function GET() {
   try {
     const res = await fetch("https://marcconrad.com/uob/heart/api.php", {

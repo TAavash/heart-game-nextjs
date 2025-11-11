@@ -10,7 +10,7 @@ export default function Home() {
   const [highScore, setHighScore] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(false);
 
-  // ✅ Fetch user’s high score from /api/score
+  // Fetch user’s high score from /api/score
   useEffect(() => {
     const fetchScore = async () => {
       if (status === "authenticated") {
@@ -30,7 +30,7 @@ export default function Home() {
     fetchScore();
   }, [status]);
 
-  // ✅ Loading state
+  // Loading state
   if (status === "loading" || loading)
     return (
       <main className="flex min-h-screen items-center justify-center bg-gray-900 text-white">
@@ -41,10 +41,12 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-gray-900 text-white p-6 text-center">
       <h1 className="text-4xl font-bold mb-4">❤️ Heart Game</h1>
-      <p className="text-lg text-gray-300 mb-6">Welcome to the CIS007-3 Project</p>
 
       {status === "authenticated" && session?.user ? (
         <>
+          <p className="text-2xl mb-2 text-white">
+            Welcome <span className="font-bold text-orange-400">{session.user.name}</span> let's start your game
+          </p>
           <p className="text-lg mb-2 text-yellow-400">
             Logged in as <span className="font-semibold">{session.user.email}</span>
           </p>

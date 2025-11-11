@@ -2,9 +2,7 @@ import { NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/db";
 import User from "@/models/User";
 
-/**
- * GET  →  returns top-10 users by score
- */
+//  returns top-10 users by score
 export async function GET() {
   try {
     await connectToDatabase();

@@ -4,10 +4,9 @@ import { authOptions } from "@/lib/auth";
 import { connectToDatabase } from "@/lib/db";
 import User from "@/models/User";
 
-/**
- * POST → updates score only if it's higher
- * GET  → fetch current & highest score
- */
+
+//  POST updates score only if it's higher
+//  GET  fetch current & highest score
 export async function POST(req: Request) {
   try {
     const session = await getServerSession(authOptions);

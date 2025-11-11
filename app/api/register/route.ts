@@ -3,9 +3,8 @@ import bcrypt from "bcrypt";
 import { connectToDatabase } from "@/lib/db";
 import User from "@/models/User";
 
-/**
- * Registers a new user (hashes password before saving)
- */
+//  Registers a new user (hashes password before saving)
+
 export async function POST(req: Request) {
   try {
     const { username, email, password } = await req.json();

@@ -18,7 +18,7 @@ export default function GamePage() {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
-  // ✅ Fetch new question
+  // Fetch new question
   const fetchQuestion = useCallback(async () => {
     try {
       setLoading(true);
@@ -43,7 +43,7 @@ export default function GamePage() {
     }
   }, []);
 
-  // ✅ Load initial data
+  // Load initial data
   useEffect(() => {
     if (status === "unauthenticated") {
       router.push("/login");
@@ -64,7 +64,7 @@ export default function GamePage() {
     }
   }, [status, fetchQuestion, router]);
 
-  // ✅ Countdown timer
+  // Countdown timer
   useEffect(() => {
     if (timeLeft <= 0) {
       setMessage("⏰ Time’s up!");
@@ -75,7 +75,7 @@ export default function GamePage() {
     return () => clearTimeout(timer);
   }, [timeLeft, router]);
 
-  // ✅ Handle answer
+  // Handle answer
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!solution) return;
@@ -109,8 +109,7 @@ export default function GamePage() {
         Loading...
       </main>
     );
-
-  // ✅ UI
+    
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-gray-900 text-white p-4">
       <h1 className="text-3xl font-bold mb-2">❤️ Heart Game</h1>

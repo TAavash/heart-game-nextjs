@@ -14,7 +14,6 @@ interface MongooseCache {
 
 // Extend NodeJS global type to store cached mongoose connection
 declare global {
-  // eslint-disable-next-line no-var
   var mongooseCache: MongooseCache | undefined;
 }
 
